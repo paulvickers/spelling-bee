@@ -24,7 +24,10 @@ export const useMainStore = defineStore({
       "" as string
     ),
     yesterdaysMiddleLetter: useStorage("yesterdaysMiddleLetter", "" as string),
-    yesterdaysCorrectGuesses: useStorage("yesterdaysCorrectGuesses", new Set([]) as Set<string>),
+    yesterdaysCorrectGuesses: useStorage(
+      "yesterdaysCorrectGuesses",
+      new Set([]) as Set<string>
+    ),
     theme: useStorage("theme", "light" as string),
     // don't need to be in local storage because they doesn't change
     pointsMessages: {
@@ -232,9 +235,15 @@ export const useMainStore = defineStore({
       if (word && this.isPangram({ word })) {
         className += "pangram ";
       }
-      return className
+      return className;
     },
-    cellClassNameYesterday({ row, columnIndex }: { row: any; columnIndex: number }) {
+    cellClassNameYesterday({
+      row,
+      columnIndex,
+    }: {
+      row: any;
+      columnIndex: number;
+    }) {
       let className = "";
       const word = row[columnIndex + 1];
       if (word && this.isPangram({ word })) {
@@ -243,7 +252,7 @@ export const useMainStore = defineStore({
       if (word && !this.yesterdaysCorrectGuesses.has(word)) {
         className += "not-guessed-yesterday ";
       }
-      return className
+      return className;
     },
   },
 });

@@ -29,7 +29,7 @@ const gridData = computed(() =>
     </span>
   </strong>
   <span>
-    <p>{{ store.yesterdaysAnswers.length }} {{ $t('yesterdaysWords') }}</p>
+    <p>{{ store.yesterdaysAnswers.length }} {{ $t("yesterdaysWords") }}</p>
   </span>
   <el-table :data="gridData" :cell-class-name="store.cellClassNameYesterday">
     <el-table-column property="1" label="" />

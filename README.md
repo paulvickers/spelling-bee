@@ -6,10 +6,15 @@
 An open source game inspired by the New York Times Spelling Bee Puzzle.
 New challenge every day. Create words using letters from the hive.
 
+## Modifications
+
+- Original game by Connor Sheehan https://github.com/ConorSheehan1/spelling-bee
+- Idea for highlighting yesterdays answers that were not found from https://github.com/stelcodes/spelling-bee
+- Changed mininum number of words to 50
+
 ## Links
 
-https://spelling-bee-free.pages.dev  
-~~https://spelling-b.netlify.app~~
+
 
 |                                              |                                                  |
 | -------------------------------------------- | ------------------------------------------------ |
