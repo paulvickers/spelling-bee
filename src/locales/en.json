@@ -13,6 +13,7 @@
   "BugText": "If you see any bugs you can log them on",
   "BugTextEmail": "or email me at",
   "foundWords": "You have found 0 words | You have found 1 word | You have found {n} words",
+  "yesterdaysWords": "words",
   "Your words": "Your words",
   "How to play": "How to play",
   "helpCreateWords": "Create words using letters from the hive",

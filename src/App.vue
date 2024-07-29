@@ -245,6 +245,18 @@ h2 span {
   font-weight: bold;
 }
 
+.not-guessed-yesterday {
+  //font-weight:lighter;
+  //font-style: italic;
+  background-color: #d4e7d4;
+}
+
+html.dark .not-guessed-yesterday {
+  //font-weight: lighter;
+  //font-style: italic;
+  background-color: #1e321e;
+}
+
 .toast-message {
   max-width: 80%;
   margin: 0, 1em;

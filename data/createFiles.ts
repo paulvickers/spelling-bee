@@ -12,7 +12,8 @@ import { generateAnswerObjs, shuffle } from "../src/utils";
 import currentAnswers from "./allAnswers.json";
 
 // config
-const minNumAnswers = 20;
+const minNumAnswers = 55;
+const maxNumAnswers = 130;
 const writeSupplementaryFiles = true;
 // 10 years worth of puzzles per file. avoid slow loading page and need for git-lfs with all puzzles in one file.
 // need to update to use allAnswers2 10 years from now. see you in the future o_0
@@ -69,7 +70,7 @@ for (let offset = 0; offset < 7; offset++) {
       if (!word.includes(middleLetter)) return false;
       return word.split("").every((char: string) => availableLetters.includes(char));
     });
-    if (answers.length >= minNumAnswers) {
+    if (answers.length >= minNumAnswers && answers.length <= maxNumAnswers) {
       allAnswers.push({ answers, middleLetter, availableLetters });
     } // else {
     //   console.log({ availableLetters, middleLetter, len: answers.length })
