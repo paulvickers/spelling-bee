@@ -14,8 +14,6 @@ New challenge every day. Create words using letters from the hive.
 
 ## Links
 
-
-
 |                                              |                                                  |
 | -------------------------------------------- | ------------------------------------------------ |
 | ![light-sc](.github/images/spelling-bee.png) | ![dark-sc](.github/images/spelling-bee-dark.png) |
