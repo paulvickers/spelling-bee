@@ -50,7 +50,7 @@ const onOpenCorrectGuesses = () => {
 const onCloseCorrectGuesses = () => {
   timer = setTimeout(() => {
     zindex.value = 0;
-  }, 750);
+  }, 2000);
 };
 
 onMounted(() => {
@@ -260,7 +260,7 @@ html.dark .not-guessed-yesterday {
 .toast-message {
   max-width: 80%;
   margin: 0, 1em;
-  margin-top: 25vh;
+  margin-top: 22vh;
 }
 
 html.dark {
