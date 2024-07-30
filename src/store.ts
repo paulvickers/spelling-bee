@@ -204,7 +204,7 @@ export const useMainStore = defineStore({
         this.yesterdaysAnswers = yesterdaysAnswers;
         this.yesterdaysAvailableLetters = yesterdaysAvailableLetters;
         this.yesterdaysMiddleLetter = yesterdaysMiddleLetter;
-        this.yesterdaysCorrectGuesses = new Set([]);
+        this.yesterdaysCorrectGuesses = this.correctGuesses;
         this.lastGameDate = this.gameDate;
         return "cache-bust";
       }
