@@ -50,7 +50,7 @@ const onOpenCorrectGuesses = () => {
 const onCloseCorrectGuesses = () => {
   timer = setTimeout(() => {
     zindex.value = 0;
-  }, 2000);
+  }, 750);
 };
 
 onMounted(() => {
