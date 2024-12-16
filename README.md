@@ -29,3 +29,4 @@ New challenge every day. Create words using letters from the hive.
 ## Development
 
 See [dev.md](./dev.md)
+Remember to yarn build before deploying
