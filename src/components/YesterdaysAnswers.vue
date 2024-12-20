@@ -30,7 +30,10 @@ const gridData = computed(() =>
   </strong>
   <span>
     <p>
-      {{ store.yesterdaysCorrectGuesses.length }}/{{ store.yesterdaysAnswers.length }} {{ $t("yesterdaysWords") }}
+      {{ store.correctGuesses.length }}/{{
+        store.yesterdaysAnswers.length
+      }}
+      {{ $t("yesterdaysWords") }}
     </p>
   </span>
   <el-table :data="gridData" :cell-class-name="store.cellClassNameYesterday">
