@@ -30,9 +30,7 @@ const gridData = computed(() =>
   </strong>
   <span>
     <p>
-      {{ store.correctGuesses.length }}/{{
-        store.yesterdaysAnswers.length
-      }}
+      {{ store.correctGuesses.length }}hello/{{ store.yesterdaysAnswers.length }}
       {{ $t("yesterdaysWords") }}
     </p>
   </span>
