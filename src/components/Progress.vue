@@ -14,7 +14,8 @@ const showRanking = ref(false);
         <li
           v-for="(scoreLevel, index) in store.getScoreLevels"
           :key="`ranking${index}`">
-          {{ $t(`rank.${index}`) }} ({{ scoreLevel }})
+          {{ $t(`rank.${index}`) }} <span v-if="index === 9"> (???)</span> 
+          <span v-else>({{ scoreLevel }})</span>
         </li>
       </ul>
     </div>

@@ -65,7 +65,7 @@ export const useMainStore = defineStore({
         Math.floor(this.getMaxScore * 0.5),
         Math.floor(this.getMaxScore * 0.55),
         Math.floor(this.getMaxScore * 0.6),
-        this.getMaxScore
+        this.getMaxScore,
       ].sort((a, b) => a - b);
       const uniqueLevels = incrementDups(levels);
       const minUniqueLevel = Math.min(...uniqueLevels);
