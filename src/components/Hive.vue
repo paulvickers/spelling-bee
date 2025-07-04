@@ -245,7 +245,7 @@ html.dark {
 
 @media only screen and (max-height: 650px) {
   .sb-controls {
-    top: max(65%, 420px);
+    top: max(60%, 400px);
   }
   .hive-cell {
     top: 30%;
@@ -260,7 +260,7 @@ html.dark {
 
 @media (orientation: landscape) {
   .sb-controls {
-    top: max(65%, 500px);
+    top: max(60%, 400px);
   }
   .hive-actions {
     padding-bottom: 2rem;

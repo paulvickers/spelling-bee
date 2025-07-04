@@ -70,8 +70,9 @@ for (let offset = 0; offset < 7; offset++) {
       if (!word.includes(middleLetter)) return false;
       return word.split("").every((char: string) => availableLetters.includes(char));
     });
-    if (answers.length >= minNumAnswers) {
+    if (answers.length >= minNumAnswers && answers.length <= maxNumAnswers) {
       allAnswers.push({ answers, middleLetter, availableLetters });
+      console.log({len: answers.length});
     } // else {
     //   console.log({ availableLetters, middleLetter, len: answers.length })
     // }
