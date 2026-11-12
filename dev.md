@@ -73,3 +73,35 @@ Page counting at https://spelling-b.goatcounter.com/
 - https://www.goatcounter.com/help/gdpr
   - github alt: https://github.com/arp242/goatcounter/blob/c8c50d8720862e605049c3492fd7b4f285de6e98/tpl/help/gdpr.markdown
 - https://github.com/arp242/goatcounter/blob/c8c50d8720862e605049c3492fd7b4f285de6e98/tpl/help/consent.markdown
+
+## Docker (no local Node needed)
+
+Requires only Docker Desktop.
+
+```shell
+# first run (or after package.json / yarn.lock change): build and start
+docker compose up --build
+
+# subsequent runs
+docker compose up
+```
+
+Then open http://localhost:3000. Edits to files in `src/` reload in the browser automatically.
+Stop with Ctrl+C (or `docker compose down`).
+
+Other commands run inside the container:
+
+```shell
+docker compose run --rm app yarn test
+docker compose run --rm app yarn lint
+docker compose run --rm app yarn lintfix
+docker compose run --rm app yarn build      # output appears in ./dist
+docker compose run --rm app yarn createFiles
+```
+
+If dependencies change, rebuild and reset the cached `node_modules` volume:
+
+```shell
+docker compose down -v
+docker compose up --build
+```

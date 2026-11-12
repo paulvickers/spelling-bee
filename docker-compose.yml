@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      # Your source folder, live: edits on the Mac appear instantly.
+      - .:/app
+      # Keep the container's Linux node_modules separate from the Mac folder.
+      - node_modules:/app/node_modules
+    environment:
+      # Reliable hot-reload across the Mac <-> container file share.
+      CHOKIDAR_USEPOLLING: "true"
+      # The TypeScript checker type-checks data/createFiles.ts, which imports
+      # the large data/allAnswers.json; give Node enough heap for that.
+      NODE_OPTIONS: "--max-old-space-size=3072"
+
+volumes:
+  node_modules:
