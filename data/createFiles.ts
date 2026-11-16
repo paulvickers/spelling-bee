@@ -15,6 +15,7 @@ import currentAnswers from "./allAnswers.json";
 const minNumAnswers = 20;
 const maxNumAnswers = 100;
 const writeSupplementaryFiles = true;
+const skipIngPuzzles = true;
 // 10 years worth of puzzles per file. avoid slow loading page and need for git-lfs with all puzzles in one file.
 // need to update to use allAnswers2 10 years from now. see you in the future o_0
 const numPuzzlesPerFile = 3650;
@@ -63,6 +64,8 @@ for (let offset = 0; offset < 7; offset++) {
     numProcessed += 1;
     createPuzzleBar.update(numProcessed);
     const availableLetters = uniqueLetterCombinationsShuffled[i] as string;
+    // letter sets containing i, n and g allow "-ing" on almost every verb, which makes a dull puzzle
+    const isIngPuzzle = ["i", "n", "g"].every((c) => availableLetters.includes(c));
     // for each unique letter combination, choose middle letter in sequence
     // e.g. [0,1,2,3,4,5,6,0,1,2,3...], [1,2,3,4,5,6,0,1,2,3...]
     const middleLetter = availableLetters[(i + offset) % 7];
@@ -70,7 +73,11 @@ for (let offset = 0; offset < 7; offset++) {
       if (!word.includes(middleLetter)) return false;
       return word.split("").every((char: string) => availableLetters.includes(char));
     });
-    if (answers.length >= minNumAnswers && answers.length <= maxNumAnswers) {
+    if (
+      !(skipIngPuzzles && isIngPuzzle) &&
+      answers.length >= minNumAnswers &&
+      answers.length <= maxNumAnswers
+    ) {
       allAnswers.push({ answers, middleLetter, availableLetters });
       console.log({len: answers.length});
     } // else {
